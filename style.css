@@ -1,10 +1,10 @@
 :root {
-    --font: "Roboto Mono";
+    --font: "Iosevka";
     --background: #1c1c1c;
     --foreground: #f0f0f0;
-    --green: #b5bd68;
-    --red: #cc6666;
-    --orange: #f0c674;
+    --accent-1: #5a5a5a;
+    --accent-2: #ffc2c0;
+    --accent-3: #b0b0b0;
     --branch: 1px solid #a7a9be;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 span {
-    color: var(--green);
+    color: var(--accent-1);
 }
 
 h1 {
@@ -41,7 +41,7 @@ h1 {
     font-family: var(--font);
     font-size: 1rem;
     font-weight: normal;
-    color: var(--red);
+    color: var(--accent-2);
 }
 
 .tree > ul {
@@ -90,7 +90,7 @@ a {
 
 a:hover {
     color: var(--background);
-    background: var(--orange);
+    background: var(--accent-3);
 }
 
 form h1 {
