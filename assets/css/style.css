@@ -2,9 +2,9 @@
     --font: "Iosevka";
     --background: #1c1c1c;
     --foreground: #f0f0f0;
-    --red: #5a5a5a;
-    --green: #ffc2c0;
-    --orange: #b0b0b0;
+    --prompt: #5a5a5a;
+    --dir: #ffc2c0;
+    --selection: #b0b0b0;
     --branch: 1px solid #9a9a9a;
 }
 
@@ -33,7 +33,7 @@ body {
 }
 
 span {
-    color: var(--red);
+    color: var(--prompt);
 }
 
 h1 {
@@ -41,7 +41,7 @@ h1 {
     font-family: var(--font);
     font-size: 1rem;
     font-weight: normal;
-    color: var(--green);
+    color: var(--dir);
 }
 
 .tree > ul {
@@ -90,7 +90,7 @@ a {
 
 a:hover {
     color: var(--background);
-    background: var(--orange);
+    background: var(--selection);
 }
 
 form h1 {
