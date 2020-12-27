@@ -1,11 +1,11 @@
 :root {
     --font: "Iosevka";
-    --background: #1c1c1c;
-    --foreground: #f0f0f0;
-    --red: #5a5a5a;
-    --green: #ffc2c0;
-    --orange: #b0b0b0;
-    --branch: 1px solid #9a9a9a;
+    --background: #ff0000;
+    --foreground: #ff0000;
+    --red: #ff0000;
+    --green: #ff0000;
+    --orange: #ff0000;
+    --branch: 1px solid #ff0000;
 }
 
 html {
