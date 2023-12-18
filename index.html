@@ -1,60 +1,317 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <title> ~ </title>
-  </head>
-  <body>
-    <div class="container">
-      <div class="prompt"><span>amasquelier</span>@<span>start</span> ~ tree</div>
-      <div class="tree">
-        <h1>.</h1>
-        <ul>
-          <li>
-            <h1>/usr/</h1>
-            <ul>
-              <li>
-                <h1>/r/</h1>
-                <ul>
-                  <li><a href="https://reddit.com/r/unixporn">unixporn</a></li>
-                  <li><a href="https://reddit.com/r/linux">linux</a></li>
-                  <li><a href="https://reddit.com/r/neovim">nvim</a></li>
-                  <li><a href="https://reddit.com/r/vim">vim</a></li>
-                </ul>
-              </li>
-              <li><a href="https://youtube.com">youtube</a></li>
-              <li><a href="https://twitch.com">twitch</a></li>
-              <li><a href="https://netflix.com">netflix</a></li>
-            </ul>
-          </li>
-          <li>
-            <h1>/dev/</h1>
-            <ul>
-              <li><a href="https://github.com/levouh?tab=repositories">github</a></li>
-              <li><a href="https://gitlab.com">gitlab</a></li>
-            </ul>
-          </li>
-          <li>
-            <h1>/work/</h1>
-            <ul>
-              <li><a href="https://sofi.okta.com">okta</a></li>
-              <li><a href="https://mail.google.com/mail/u/0/#inbox">mail</a></li>
-              <li><a href="https://calendar.google.com/calendar/u/0/r?pli=1">cal</a></li>
-              <li><a href="https://drive.google.com/drive/">drive</a></li>
-              <li><a href="https://galileo-fintech.atlassian.net/jira/software/c/projects/SETL/boards/3442">jira</a></li>
-            </ul>
-          </li>
-          <li>
-            <h1>/var/log/</h1>
-            <ul>
-              <li><a href="https://www.notion.so/hjkl/Dashboard-2788fb8ad91a4b8081aec9bc53128f5b">notion</a></li>
-              <li><a href="https://www.messenger.com/t/kathy.hua.58">messenger</a></li>
-              <li><a href="https://messages.google.com/web/conversations">messages</a></li>
-              <li><a href="https://discord.com/channels/@me">discord</a></li>
-            </ul>
-          </li>
-        </ul>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;600&display=swap">
+  <title>~</title>
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('assets/background-orig.jpg');
+      background-size: 100% 100vh;
+      background-position: center;
+      background-attachment: fixed;
+      color: #1c1c1c;
+    }
+
+    header {
+      background-color: #292932;
+      padding: 0px;
+      color: #ff0000;
+      text-align: center;
+    }
+
+    main {
+      margin: 20px;
+      background-color: transparent;
+    }
+
+    .section {
+      border: 2px solid #292932;
+      margin-bottom: 10px;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+    }
+
+    .section-header {
+      background-color: #292932;
+      color: #dbdbdb;
+      padding: 10px;
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+      align-items: center;
+    }
+
+    .section-content {
+      padding: 10px;
+      color: #1c1c1c;
+      font-weight: bold;
+      display: block;
+    }
+
+    /* Item (image + text) */
+    .item {
+      display: flex;
+      align-items: center;
+      margin: 5px 0;
+      cursor: pointer;
+    }
+    .item:hover {
+      background-color: #1c1c1c66;
+      border-radius: 3px;
+    }
+
+    /* Item text */
+    a {
+      color: #1c1c1c;
+      text-decoration: none;
+    }
+    .paragraph1 {
+        padding-left: 10px;
+        display: inline-block;
+        float: left;
+    }
+
+    /* Item image */
+    img {
+      height: 1em;
+    }
+    .img-item {
+      width: 25px;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="section" id="management">
+      <div class="section-header" onclick="toggleSection('management')">
+        management
+        <span></span>
       </div>
-  </body>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/opnsense.png" alt="Logo">
+          <a href="https://172.27.1.1" target="_blank" class="paragraph1">Opnsense</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/proxmox.png" alt="Logo">
+          <a href="https://pve.levouh.net" target="_blank" class="paragraph1">Proxmox</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/tailscale.png" alt="Logo">
+          <a href="https://login.tailscale.com/admin/machines" target="_blank" class="paragraph1">Tailscale</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/proton.png" alt="Logo">
+          <a href="https://account.protonvpn.com/account" target="_blank" class="paragraph1">Proton</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/cloudflare.png" alt="Logo">
+          <a href="https://dash.cloudflare.com" target="_blank" class="paragraph1">Cloudflare</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/unifi.png" alt="Logo">
+          <a href="https://ui.levouh.net" target="_blank" class="paragraph1">Unifi</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/gitea.png" alt="Logo">
+          <a href="https://git.levouh.net" target="_blank" class="paragraph1">Gitea</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/truenas.png" alt="Logo">
+          <a href="https://nas.levouh.net" target="_blank" class="paragraph1">TrueNAS</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/homeassistant.png" alt="Logo">
+          <a href="https://ha.levouh.net" target="_blank" class="paragraph1">HomeAssistant</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/zwavejs.png" alt="Logo">
+          <a href="https://mqtt.levouh.net" target="_blank" class="paragraph1">ZWaveJS</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/myspeed.png" alt="Logo">
+          <a href="https://speed.levouh.net" target="_blank" class="paragraph1">MySpeed</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/syncthing-windows.png" alt="Logo">
+          <a href="http://localhost:8384" target="_blank" class="paragraph1">Syncthing - Windows</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/syncthing-linux.png" alt="Logo">
+          <a href="https://dev.levouh.net" target="_blank" class="paragraph1">Syncthing - Linux</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="storage">
+      <div class="section-header" onclick="toggleSection('storage')">
+        storage
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/dufs.png" alt="Logo">
+          <a href="https://fs.levouh.net" target="_blank" class="paragraph1">DUFS</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/backblaze.png" alt="Logo">
+          <a href="https://secure.backblaze.com/b2_buckets.htm" target="_blank" class="paragraph1">BackBlaze</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="communication">
+      <div class="section-header" onclick="toggleSection('communication')">
+        communication
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/gmail.png" alt="Logo">
+          <a href="https://mail.google.com" target="_blank" class="paragraph1">GMail</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/gcal.png" alt="Logo">
+          <a href="https://calendar.google.com" target="_blank" class="paragraph1">GCal</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/gdrive.png" alt="Logo">
+          <a href="https://drive.google.com" target="_blank" class="paragraph1">GDrive</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/chatgpt.png" alt="Logo">
+          <a href="https://chat.openai.com" target="_blank" class="paragraph1">ChatGPT</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="torrent">
+      <div class="section-header" onclick="toggleSection('torrent')">
+        torrent
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/qbittorrent.png" alt="Logo">
+          <a href="https://qbt.levouh.net" target="_blank" class="paragraph1">qBittorrent</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/torrentleech.png" alt="Logo">
+          <a href="https://torrentleech.org" target="_blank" class="paragraph1">TorrentLeech</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/fnp.png" alt="Logo">
+          <a href="https://fearnopeer.com" target="_blank" class="paragraph1">FearNoPeer</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/oldtoons.png" alt="Logo">
+          <a href="https://oldtoons.world" target="_blank" class="paragraph1">OldToons</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/onlyencodes.png" alt="Logo">
+          <a href="https://onlyencodes.cc" target="_blank" class="paragraph1">OnlyEncodes</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="media">
+      <div class="section-header" onclick="toggleSection('media')">
+        media
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/reddit.png" alt="Logo">
+          <a href="https://reddit.com" target="_blank" class="paragraph1">Reddit</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/youtube.png" alt="Logo">
+          <a href="https://youtube.com" target="_blank" class="paragraph1">YouTube</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/github.png" alt="Logo">
+          <a href="https://github.com" target="_blank" class="paragraph1">GitHub</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/jellyfin.png" alt="Logo">
+          <a href="https://jf.levouh.net" target="_blank" class="paragraph1">JellyFin</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/trakt.png" alt="Logo">
+          <a href="https://trakt.tv/dashboard" target="_blank" class="paragraph1">Trakt</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/twitch.png" alt="Logo">
+          <a href="https://twitch.tv" target="_blank" class="paragraph1">Twitch</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="shopping">
+      <div class="section-header" onclick="toggleSection('shopping')">
+        shopping
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/amazon.png" alt="Logo">
+          <a href="https://amazon.com" target="_blank" class="paragraph1">Amazon</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/ebay.png" alt="Logo">
+          <a href="https://ebay.com" target="_blank" class="paragraph1">ebay</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" id="work">
+      <div class="section-header" onclick="toggleSection('work')">
+        work
+        <span></span>
+      </div>
+      <div class="section-content">
+        <div class="item">
+          <img class="img-item" src="assets/okta.png" alt="Logo">
+          <a href="https://sofi.okta.com" target="_blank" class="paragraph1">Okta</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/gitlab.png" alt="Logo">
+          <a href="https://gitlab.com" target="_blank" class="paragraph1">Gitlab</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/jira.png" alt="Logo">
+          <a href="https://galileo-fintech.atlassian.net/jira/software/c/projects/SETL/boards/3442" target="_blank" class="paragraph1">Jira</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/appd.png" alt="Logo">
+          <a href="https://galileofinancial-prod.saas.appdynamics.com/controller/#/" target="_blank" class="paragraph1">AppD</a>
+        </div>
+        <div class="item">
+          <img class="img-item" src="assets/datadog.png" alt="Logo">
+          <a href="https://app.datadoghq.com/dashboard/ykc-3f2-i5h?refresh_mode=sliding&from_ts=1695065689046&to_ts=1695069289046&live=true" target="_blank" class="paragraph1">DataDog</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function toggleSection(sectionId) {
+      const section = document.getElementById(sectionId);
+      const sectionContent = section.querySelector('.section-content');
+
+      sectionContent.style.display = sectionContent.style.display === 'none' ? 'block' : 'none';
+    }
+  </script>
+
+</body>
 </html>
